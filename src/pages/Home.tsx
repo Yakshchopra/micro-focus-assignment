@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Footer from '../components/shared/Footer';
 import Header from '../components/shared/Header';
-import Twiggle from '../components/Twiggle';
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useStateValue } from '../store/StateProvider';
 
 const Home = () => {
   const constraintsRef = useRef(null);
+  const [snip, setSnip] = useState(false);
+  const [{ position }] = useStateValue();
 
   return (
     <div className='bg-light h-screen flex flex-col w-screen p-5 overflow-hidden'>
@@ -20,8 +22,10 @@ const Home = () => {
         <motion.div
           drag
           dragConstraints={constraintsRef}
-          dragSnapToOrigin={true}
-          className='h-64 w-96 bg-custom-blue opacity-25 rounded-xl absolute'
+          dragSnapToOrigin={snip}
+          className={`h-64 w-96 bg-custom-blue opacity-25 rounded-xl ${
+            position === 'bottom' && 'absolute bottom-0 right-0'
+          }`}
         ></motion.div>
       </div>
       <Footer />

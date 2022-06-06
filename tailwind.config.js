@@ -6,6 +6,9 @@ module.exports = {
         light: '#ECF0FF',
         'custom-blue': '#498EF6',
       },
+      spacing: {
+        400: '400px',
+      },
     },
   },
   plugins: [],
