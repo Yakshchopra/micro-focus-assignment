@@ -1,5 +1,6 @@
 import React from 'react';
 import Selector from './Selector';
+import Timer from './Timer';
 
 const Header = () => {
   return (
@@ -9,6 +10,7 @@ const Header = () => {
       {/* description text */}
       <span>Press escape to hide the window</span>
       {/* timer */}
+      <Timer />
     </header>
   );
 };
