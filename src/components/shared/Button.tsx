@@ -6,6 +6,11 @@ interface props {
   onClick: any;
 }
 
+/**
+ * @property {event} onClick : event handler function from parent
+ * @property {string} text : text that needs to be passed to the button
+ */
+
 const Button = (props: props) => {
   const { text, onClick } = props;
 

@@ -7,6 +7,11 @@ import { useStateValue } from '../../store/StateProvider';
 const Selector = () => {
   const [{ position }, dispatch] = useStateValue();
 
+  /**
+   * @param {RadioChangeEvent} e
+   * event handler for the handleChange function
+   */
+
   const handleChange = (e: RadioChangeEvent) => {
     dispatch({
       type: 'SET_POSITION',

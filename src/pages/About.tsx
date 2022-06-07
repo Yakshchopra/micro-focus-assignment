@@ -6,6 +6,7 @@ import { useStateValue } from '../store/StateProvider';
 
 const About = () => {
   let navigate = useNavigate();
+
   const [{ position, snapper, link }, dispatch] = useStateValue();
   const handleBack = async () => {
     await dispatch({

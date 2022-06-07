@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+/**
+ * @property {string} timer
+ * state handler for clock to be shown in the header
+ */
+
 const Timer = () => {
   const [timer, setTimer] = useState('');
 
