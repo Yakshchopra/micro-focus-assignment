@@ -83,7 +83,7 @@ const Home = () => {
   // returned component with floating div
 
   return (
-    <div className='bg-light land-screen overflow-scroll  w-screen p-5'>
+    <div className='flex flex-col bg-light land-screen overflow-scroll  w-screen p-5'>
       <Header display={display} />
       {midContainer()}
       <Footer />
