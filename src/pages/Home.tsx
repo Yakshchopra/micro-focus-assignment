@@ -51,11 +51,16 @@ const Home = () => {
           onDragStart={handleDragStart}
           className={`sm:h-64 sm:w-96 h-36 w-42 text-3xl ${
             link && 'border-4 border-blue-900'
-          } flex handwritten text-blue-900 justify-center items-center bg-custom-blue ${
+          } flex flex-col handwritten text-blue-900 justify-center items-center bg-custom-blue ${
             position === 'bottom' && 'absolute bottom-0 right-0'
           } opacity-50 rounded-xl`}
         >
-          Drag me around :)
+          <p>Drag me around :)</p>
+          {position !== 'none' && (
+            <p className='text-xl font-mono text-white'>
+              My position is: {position === 'center' ? 'center' : 'lower right'}
+            </p>
+          )}
         </motion.div>
       )}
     </div>
