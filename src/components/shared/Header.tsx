@@ -18,7 +18,7 @@ const Header = (props: props) => {
       <Selector />
       {/* description text */}
       {props.display ? (
-        <span>Press escape to hide the floter </span>
+        <span>Press escape to hide the floater </span>
       ) : (
         <span>Press enter to show the floater </span>
       )}
