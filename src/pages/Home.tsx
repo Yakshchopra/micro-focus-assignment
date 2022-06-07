@@ -66,6 +66,10 @@ const Home = () => {
     const listener = (event: KeyboardEvent) => {
       if (event.code === 'Enter' || event.code === 'NumpadEnter') {
         setDisplay(true);
+        dispatch({
+          type: 'SET_POSITION',
+          position: 'center',
+        });
         event.preventDefault();
       }
       if (event.code === 'Escape' || event.code === 'NumpadEscape') {
@@ -85,7 +89,7 @@ const Home = () => {
   // returned component with floating div
 
   return (
-    <div className='flex flex-col bg-light land-screen overflow-scroll  w-screen p-5'>
+    <div className='flex flex-col bg-light land-screen overflow-scroll w-screen'>
       <Header display={display} />
       {midContainer()}
       <Footer />

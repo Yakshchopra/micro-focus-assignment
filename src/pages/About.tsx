@@ -21,6 +21,10 @@ const About = () => {
       type: 'SET_LINK',
       link: true,
     });
+    await dispatch({
+      type: 'SET_POSITION',
+      position: 'center',
+    });
     navigate('/');
   };
 
