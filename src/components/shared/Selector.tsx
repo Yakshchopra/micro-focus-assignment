@@ -11,6 +11,11 @@ const Selector = () => {
       type: 'SET_POSITION',
       position: e.target.value,
     });
+
+    dispatch({
+      type: 'SET_SNAP',
+      snapper: true,
+    });
   };
 
   return (

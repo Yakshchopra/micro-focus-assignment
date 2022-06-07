@@ -8,12 +8,7 @@ import { useStateValue } from '../store/StateProvider';
 const Home = () => {
   const constraintsRef = useRef(null);
   const [display, setDisplay] = useState(true);
-  const [dragStart, setDragStart] = useState(false);
-  const [{ position }] = useStateValue();
-
-  useEffect(() => {
-    setDragStart(false);
-  }, [position]);
+  const [{ position, snapper }, dispatch] = useStateValue();
 
   useEffect(() => {
     const listener = (event: any) => {
@@ -39,15 +34,32 @@ const Home = () => {
       <Header display={display} />
       {/* main container */}
       <div
-        className='test w-full my-2 justify-center items-center relative'
+        className='test w-full my-1 justify-center items-center relative'
         ref={constraintsRef}
       >
         <div className='h-400 w-full bg-white rounded-xl absolute top-0 left-0'></div>
         {display && (
           <motion.div
             drag
+            style={{
+              ...(!snapper
+                ? {
+                    x: 0,
+                    y: 0,
+                  }
+                : {}),
+            }}
             dragConstraints={constraintsRef}
-            onDragStart={(event, info) => setDragStart(true)}
+            onDragStart={(event, info) => {
+              dispatch({
+                type: 'SET_POSITION',
+                position: 'none',
+              });
+              dispatch({
+                type: 'SET_SNAP',
+                snapper: false,
+              });
+            }}
             className={`h-64 w-96 bg-custom-blue ${
               position === 'bottom' && 'absolute bottom-0 right-0'
             } opacity-25 rounded-xl`}
