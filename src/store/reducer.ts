@@ -1,6 +1,7 @@
 export const initialState = {
   position: 'center',
   snapper: false,
+  link: false,
 };
 
 export interface inital {
@@ -18,7 +19,15 @@ interface snapAction {
   snapper: boolean;
 }
 
-function reducer(state: inital, action: positionAction | snapAction) {
+interface linkAction {
+  type: 'SET_LINK';
+  link: boolean;
+}
+
+function reducer(
+  state: inital,
+  action: positionAction | snapAction | linkAction
+) {
   switch (action.type) {
     case 'SET_POSITION':
       return {
@@ -31,6 +40,13 @@ function reducer(state: inital, action: positionAction | snapAction) {
         ...state,
         snapper: action.snapper,
       };
+
+    case 'SET_LINK':
+      return {
+        ...state,
+        link: action.link,
+      };
+
     default:
       return state;
   }

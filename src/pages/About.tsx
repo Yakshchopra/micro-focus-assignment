@@ -2,9 +2,18 @@ import Button from '../components/shared/Button';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Self from '../components/Self';
+import { useStateValue } from '../store/StateProvider';
 
 const About = () => {
   let navigate = useNavigate();
+  const [{ position, snapper, link }, dispatch] = useStateValue();
+  const handleBack = async () => {
+    await dispatch({
+      type: 'SET_LINK',
+      link: true,
+    });
+    navigate('/');
+  };
 
   return (
     <div className='h-screen w-screen bg-light p-8 sm:p-16'>
@@ -25,7 +34,7 @@ const About = () => {
 
       <footer>
         <div className='absolute bottom-8 sm:bottom-16'>
-          <Button text='Go back' onClick={() => navigate('/')} />
+          <Button text='Go back' onClick={handleBack} />
         </div>
       </footer>
     </div>

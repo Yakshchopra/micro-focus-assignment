@@ -15,7 +15,7 @@ import { useStateValue } from '../store/StateProvider';
 const Home = () => {
   const constraintsRef = useRef<HTMLDivElement>(null);
   const [display, setDisplay] = useState(true);
-  const [{ position, snapper }, dispatch] = useStateValue();
+  const [{ position, snapper, link }, dispatch] = useStateValue();
 
   //middle container which return the middle section with the floating div.
 
@@ -49,7 +49,9 @@ const Home = () => {
           }}
           dragConstraints={constraintsRef}
           onDragStart={handleDragStart}
-          className={`sm:h-64 sm:w-96 h-36 w-42 text-3xl flex handwritten text-blue-900 justify-center items-center bg-custom-blue ${
+          className={`sm:h-64 sm:w-96 h-36 w-42 text-3xl ${
+            link && 'border-4 border-blue-900'
+          } flex handwritten text-blue-900 justify-center items-center bg-custom-blue ${
             position === 'bottom' && 'absolute bottom-0 right-0'
           } opacity-50 rounded-xl`}
         >
