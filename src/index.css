@@ -11,4 +11,9 @@
 .test {
   min-height: 400px;
   height: 70%;
+  display: flex;
+  width: 100%;
 }
+/* .dragable__div {
+  transform: none !important;
+} */

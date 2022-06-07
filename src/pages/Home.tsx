@@ -8,11 +8,11 @@ import { useStateValue } from '../store/StateProvider';
 const Home = () => {
   const constraintsRef = useRef(null);
   const [display, setDisplay] = useState(true);
-  const [snip, setSnip] = useState(false);
+  const [dragStart, setDragStart] = useState(false);
   const [{ position }] = useStateValue();
 
   useEffect(() => {
-    setSnip(true);
+    setDragStart(false);
   }, [position]);
 
   useEffect(() => {
@@ -38,20 +38,21 @@ const Home = () => {
       {/* Header */}
       <Header display={display} />
       {/* main container */}
-      <div className='test' ref={constraintsRef}>
-        <div className='h-400 bg-white  mt-3 rounded-xl flex items-center justify-center relative min-h-400'>
-          {display && (
-            <motion.div
-              drag
-              dragConstraints={constraintsRef}
-              // dragSnapToOrigin={snip}
-              onDrag={(event, info) => console.log(info.point.x, info.point.y)}
-              className={`h-64 w-96 bg-custom-blue opacity-25 rounded-xl ${
-                position === 'bottom' && 'absolute bottom-0 right-0'
-              }`}
-            ></motion.div>
-          )}
-        </div>
+      <div
+        className='test w-full my-2 justify-center items-center relative'
+        ref={constraintsRef}
+      >
+        <div className='h-400 w-full bg-white rounded-xl absolute top-0 left-0'></div>
+        {display && (
+          <motion.div
+            drag
+            dragConstraints={constraintsRef}
+            onDragStart={(event, info) => setDragStart(true)}
+            className={`h-64 w-96 bg-custom-blue ${
+              position === 'bottom' && 'absolute bottom-0 right-0'
+            } opacity-25 rounded-xl`}
+          ></motion.div>
+        )}
       </div>
 
       <Footer />
