@@ -33,6 +33,12 @@ For running this applications you have a set of pre requisites
 Installing all dependencies
 
 ```
+yarn
+```
+
+Starting local server
+
+```
 yarn start
 ```
 
@@ -41,3 +47,5 @@ Creating production build
 ```
 yarn build
 ```
+
+
