@@ -32,7 +32,7 @@ const Home = () => {
 
   const midContainer = () => (
     <div
-      className='test w-full my-1 justify-center items-center relative'
+      className='yc__parent w-full my-1 justify-center items-center relative'
       ref={constraintsRef}
     >
       <div className='h-400 w-full bg-white rounded-xl absolute top-0 left-0'></div>
@@ -49,10 +49,12 @@ const Home = () => {
           }}
           dragConstraints={constraintsRef}
           onDragStart={handleDragStart}
-          className={`h-64 w-96 bg-custom-blue ${
+          className={`h-64 w-96 text-xl flex text-blue-900 justify-center items-center bg-custom-blue ${
             position === 'bottom' && 'absolute bottom-0 right-0'
           } opacity-25 rounded-xl`}
-        ></motion.div>
+        >
+          Drag me around :)
+        </motion.div>
       )}
     </div>
   );

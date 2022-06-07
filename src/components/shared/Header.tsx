@@ -6,18 +6,22 @@ interface props {
   display: boolean;
 }
 
+/**
+ *
+ * @property {boolean} display
+ *   conditional rendering of the floating div
+ */
+
 const Header = (props: props) => {
   return (
     <header className='p-5 h-24 items-center flex justify-between bg-white rounded-xl'>
-      {/* selector */}
       <Selector />
       {/* description text */}
       {props.display ? (
-        <span>Press escape to hide the window </span>
+        <span>Press escape to hide the floter </span>
       ) : (
-        <span>Press enter to show the window </span>
+        <span>Press enter to show the floater </span>
       )}
-      {/* timer */}
       <Timer />
     </header>
   );
