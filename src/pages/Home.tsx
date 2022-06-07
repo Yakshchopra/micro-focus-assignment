@@ -49,9 +49,9 @@ const Home = () => {
           }}
           dragConstraints={constraintsRef}
           onDragStart={handleDragStart}
-          className={`h-64 w-96 text-xl flex text-blue-900 justify-center items-center bg-custom-blue ${
+          className={`sm:h-64 sm:w-96 h-36 w-42 text-3xl flex handwritten text-blue-900 justify-center items-center bg-custom-blue ${
             position === 'bottom' && 'absolute bottom-0 right-0'
-          } opacity-25 rounded-xl`}
+          } opacity-50 rounded-xl`}
         >
           Drag me around :)
         </motion.div>

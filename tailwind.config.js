@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         light: '#ECF0FF',
+        'transparent-blue': 'rgba(73, 142, 247, 0.21)',
         'custom-blue': '#498EF6',
       },
       spacing: {

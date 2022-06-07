@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
 .land-screen {
   height: fit-content;
   overflow: auto;
   height: 100vh !important;
+}
+
+.handwritten {
+  font-family: 'Nanum Pen Script', cursive;
 }
 
 .yc__parent {

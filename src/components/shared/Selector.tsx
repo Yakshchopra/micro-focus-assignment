@@ -21,7 +21,9 @@ const Selector = () => {
 
   return (
     <div className='flex items-center gap-5'>
-      <p className='text-custom-blue font-medium mb-0'>Position:</p>
+      <p className='text-custom-blue font-medium mb-0 handwritten text-2xl'>
+        Position:
+      </p>
       <div className=''>
         <Radio.Group
           value={position}

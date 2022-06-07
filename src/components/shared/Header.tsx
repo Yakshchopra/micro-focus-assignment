@@ -14,7 +14,7 @@ interface props {
 
 const Header = (props: props) => {
   return (
-    <header className='p-5 h-24 items-center flex justify-between bg-white rounded-xl'>
+    <header className='p-5 sm:h-24 h-32 items-center flex sm:flex-row flex-col justify-between bg-white rounded-xl'>
       <Selector />
       {/* description text */}
       {props.display ? (
