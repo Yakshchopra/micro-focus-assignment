@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.land-screen {
+  height: fit-content;
+  overflow: auto;
+  height: 100vh !important;
+}
+
+.test {
+  min-height: 400px;
+  height: 70%;
+}

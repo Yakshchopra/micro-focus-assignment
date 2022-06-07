@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className='h-16 p-3 bg-white rounded-xl'>
+    <footer className='h-24 p-3 bg-white rounded-xl'>
       {/* selector */}
 
       {/* description text */}

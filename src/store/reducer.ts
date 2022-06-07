@@ -1,5 +1,5 @@
 export const initialState = {
-  position: 'bottom',
+  position: 'center',
 };
 
 function reducer(state: any, action: any) {
