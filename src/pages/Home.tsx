@@ -30,9 +30,7 @@ const Home = () => {
 
   return (
     <div className='bg-light land-screen overflow-scroll  w-screen p-5'>
-      {/* Header */}
       <Header display={display} />
-      {/* main container */}
       <div
         className='test w-full my-1 justify-center items-center relative'
         ref={constraintsRef}
@@ -68,7 +66,6 @@ const Home = () => {
       </div>
 
       <Footer />
-      {/* footer */}
     </div>
   );
 };
