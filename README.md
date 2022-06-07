@@ -33,7 +33,7 @@ For running this applications you have a set of pre requisites
 Installing all dependencies
 
 ```
-cd client && yarn start
+yarn start
 ```
 
 Creating production build
