@@ -14,7 +14,7 @@ const Self = () => {
   return (
     <div className='bg-white rounded-xl p-8 my-8'>
       <img
-        className='bg-green-300 h-32 w-32 rounded-xl overflow-hidden mb-5'
+        className='bg-gray-300 h-32 w-32 rounded-xl overflow-hidden mb-5'
         src={yakshchopra}
         alt=''
       />
