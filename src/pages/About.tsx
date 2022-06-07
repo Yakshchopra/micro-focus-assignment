@@ -1,5 +1,5 @@
 import Button from '../components/shared/Button';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Self from '../components/Self';
 import { useStateValue } from '../store/StateProvider';
@@ -8,6 +8,14 @@ const About = () => {
   let navigate = useNavigate();
 
   const [{ position, snapper, link }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    dispatch({
+      type: 'SET_LINK',
+      link: true,
+    });
+  }, []);
+
   const handleBack = async () => {
     await dispatch({
       type: 'SET_LINK',

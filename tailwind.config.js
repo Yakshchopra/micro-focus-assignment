@@ -9,6 +9,7 @@ module.exports = {
       },
       spacing: {
         400: '400px',
+        800: '800px',
       },
     },
   },
