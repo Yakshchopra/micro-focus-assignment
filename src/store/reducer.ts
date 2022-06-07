@@ -3,7 +3,22 @@ export const initialState = {
   snapper: false,
 };
 
-function reducer(state: any, action: any) {
+export interface inital {
+  position: string;
+  snapper: boolean;
+}
+
+interface positionAction {
+  type: 'SET_POSITION';
+  position: string;
+}
+
+interface snapAction {
+  type: 'SET_SNAP';
+  snapper: boolean;
+}
+
+function reducer(state: inital, action: positionAction | snapAction) {
   switch (action.type) {
     case 'SET_POSITION':
       return {

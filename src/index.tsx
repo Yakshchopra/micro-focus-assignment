@@ -10,6 +10,10 @@ import { StateProvider } from './store/StateProvider';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+// parent component for injecting data to HTML
+// also responsible for handling the global states and acts as the provider for states from the store
+
 root.render(
   <StateProvider initialState={initialState} reducer={reducer}>
     <React.StrictMode>
@@ -20,7 +24,4 @@ root.render(
   </StateProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

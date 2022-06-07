@@ -1,11 +1,12 @@
 import { createContext, useContext, useReducer } from 'react';
+import { inital } from './reducer';
 
 export const StateContext = createContext<any>(null);
 
 interface Props {
   reducer: any;
-  initialState: any;
-  children: any;
+  initialState: inital;
+  children: React.ReactNode;
 }
 
 export const StateProvider = ({ reducer, initialState, children }: Props) => (

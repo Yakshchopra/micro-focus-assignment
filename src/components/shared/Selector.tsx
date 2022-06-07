@@ -1,12 +1,13 @@
 import React from 'react';
 import { Radio } from 'antd';
+import type { RadioChangeEvent } from 'antd';
 import 'antd/dist/antd.css';
 import { useStateValue } from '../../store/StateProvider';
 
 const Selector = () => {
   const [{ position }, dispatch] = useStateValue();
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: RadioChangeEvent) => {
     dispatch({
       type: 'SET_POSITION',
       position: e.target.value,
@@ -24,7 +25,7 @@ const Selector = () => {
       <div className=''>
         <Radio.Group
           value={position}
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           className='bg-red'
         >
           <Radio value='center'>Center</Radio>
